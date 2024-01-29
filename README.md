@@ -2,7 +2,8 @@
 
 Welcome to the Discord Extension Beta. 
 This is were all testing for the Discord Extension V3.0.0 will take place. 
-If you're looking to test out the latest extension please grab the latest extension from [Here](Extension/Oxide.Ext.Discord.dll).
+You can view the Discord Extension Documentation [Here](Extension).
+You can download the Discord Extension [Here](https://github.com/dassjosh/DiscordExtensionBeta/raw/main/Extension/Oxide.Ext.Discord.dll).
 Plugins that have been updated to support 3.0 can be found here [Here](Plugins/2.0).
 
 ## Major Changes
