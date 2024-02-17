@@ -432,9 +432,6 @@ namespace Oxide.Plugins
             DiscordMessageTemplate fromMessage = CreateTemplateEmbed($"[{DefaultKeys.TimestampNow.ShortTime}] ЛС от {DefaultKeys.Player.NameClan}: {PlaceholderKeys.Message}", DiscordColor.Danger);
             _templates.RegisterLocalizedTemplateAsync(this, TemplateKeys.Messages.From, fromMessage, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0 ,0), "ru");       
             
-            DiscordMessageTemplate logMessage = CreateTemplateEmbed($"[{DefaultKeys.TimestampNow.ShortTime}] {DefaultKeys.Player.NameClan} -> {DefaultKeys.PlayerTarget.NameClan}: {PlaceholderKeys.Message}", DiscordColor.Danger);
-            _templates.RegisterGlobalTemplateAsync(this, TemplateKeys.Messages.Log, logMessage, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0 ,0));
-            
             DiscordMessageTemplate errorUnlinkedUser = CreatePrefixedTemplateEmbed("Вы не можете использовать эту команду, пока не свяжете игровой аккаунт с аккаунтом Discord.", DiscordColor.Danger);
             _templates.RegisterLocalizedTemplateAsync(this, TemplateKeys.Errors.UnlinkedUser, errorUnlinkedUser, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0 ,0), "ru");
             
@@ -641,11 +638,11 @@ namespace Oxide.Plugins
 
         public void RegisterServerLangCommand(string command, string langKey)
         {
+            HashSet<string> registered = new();
             foreach (string langType in lang.GetLanguages(this))
             {
                 Dictionary<string, string> langKeys = lang.GetMessages(langType, this);
-                string commandValue;
-                if (langKeys.TryGetValue(langKey, out commandValue) && !string.IsNullOrEmpty(commandValue))
+                if (langKeys.TryGetValue(langKey, out string commandValue) && !string.IsNullOrEmpty(commandValue) && registered.Add(commandValue))
                 {
                     AddCovalenceCommand(commandValue, command);
                 }
