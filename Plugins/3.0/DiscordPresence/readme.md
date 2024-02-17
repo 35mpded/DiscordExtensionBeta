@@ -9,7 +9,7 @@
 
 ```json
 {
-  "Discord Application Bot Token": "MzkzNDcxMzcxMDYzMTk3NzA2.Wjv-xQ.zgqgqSX-YB3G2V_URgKElF06qKo",
+  "Discord Application Bot Token": "",
   "Enable Sending Message Per Update Rate": true,
   "Enable Sending Message On Player Leave/Join": true,
   "Enable Sending Server Loading Message": true,
