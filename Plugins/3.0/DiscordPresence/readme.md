@@ -82,6 +82,6 @@ To see the list of available Discord Extension placeholders you can use console 
 To see the list of available PlaceholderAPI placeholders you can use console command `placeholderapi.list`
 
 #### PlaceholderAPI
-PlaceholderAPI is not a required plugin but if you wish to include game specific placeholders it will is required
+PlaceholderAPI is not a required plugin but if you wish to include game specific placeholders it will be required
 
 
